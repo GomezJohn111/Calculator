@@ -3,11 +3,12 @@
 const display = document.getElementById("display");
 
 function appendToDisplay(input) {
-  if (display.value === "" && input === "0") {
+  if (display.value === "0" && input === "0") {
     return;
   }
 
   display.value += input;
+  display.scrollLeft = display.scrollWidth;
 }
 
 function clearDisplay() {
@@ -57,13 +58,16 @@ document.addEventListener("keydown", function (event) {
     appendToDisplay("+");
   }
   if (event.key === "*") {
-    appendToDisplay("x");
+    appendToDisplay("*");
   }
   if (event.key === "-") {
     appendToDisplay("-");
   }
   if (event.key === "/") {
     appendToDisplay("/");
+  }
+  if (event.key === ".") {
+    appendToDisplay(".");
   }
   if (event.key === "Backspace") {
     display.value = display.value.slice(0, -1);
