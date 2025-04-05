@@ -3,10 +3,6 @@
 const display = document.getElementById("display");
 
 function appendToDisplay(input) {
-  if (display.value === "0" && input === "0") {
-    return;
-  }
-
   display.value += input;
   display.scrollLeft = display.scrollWidth;
 }
@@ -17,7 +13,7 @@ function clearDisplay() {
 
 function calculate() {
   try {
-    display.value = eval(display.value);
+    display.value = Math.eval(display.value);
   } catch {
     display.value = "Error";
   }
