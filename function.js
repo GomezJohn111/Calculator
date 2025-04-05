@@ -13,7 +13,7 @@ function clearDisplay() {
 
 function calculate() {
   try {
-    display.value = Math.eval(display.value);
+    display.value = math.evaluate(display.value);
   } catch {
     display.value = "Error";
   }
